@@ -1,15 +1,8 @@
-import express from "express";
-import customMiddleware from "./middlewares/customMiddlewares";
 
-const app=express();
+import app from "./app.js";
 
-app.get("/welcome",customMiddleware,(req,res)=>{
-    res.send(`<h1>Welcome ,${req.user}! </h1>`)
-})
+const PORT = 3000;
 
-
-
-const PORT =3000;
-app.listen(PORT,()=>{
-    console.log("server is running on port 3000")
-})
+app.listen(PORT, () => {
+    console.log(`Server is running at http://localhost:${PORT}`);
+});
