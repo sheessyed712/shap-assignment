@@ -42,4 +42,9 @@ app.post("/users", (req, res) => {
 app.use((req,res)=>{
     res.status(404).send(`<h1>404-Page Not Found</h1>`);
 })
+app.get("/welcome/:username",(req,res)=>{
+    const username=req.params.username;
+    const role=req.query.role;
+    res.send(`<h1>Welcome ${username},your role is ${role}</h1>`)
+})
 export default app;
