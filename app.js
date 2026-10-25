@@ -3,6 +3,12 @@ import express from "express";
 import customMiddleware from "./middlewares/customMiddlewares.js";
 
 const app = express();
+
+//middleware for logging
+app.use((req,res,next)=>{
+    console.log(`${req.method} request made to ${req.url}`);
+    next();
+})
 //e commerce assignment
 app.get("/products",(req,res)=>{
     res.send("Here is the list of all products.")
