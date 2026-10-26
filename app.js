@@ -2,6 +2,7 @@
 import express from "express";
 import customMiddleware from "./middlewares/customMiddlewares.js";
 import productRoutes from "./routes/productRoutes.js";
+import bookRoutes from "./routes/bookRoutes.js";
 
 const app = express();
 
@@ -13,6 +14,8 @@ app.use((req,res,next)=>{
 //here we are connecting the router
 app.use("/",productRoutes);
 
+//book routes
+app.use("/",bookRoutes);
 
 //e commerce assignment
 app.get("/products",(req,res)=>{
