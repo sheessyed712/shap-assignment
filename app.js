@@ -9,6 +9,7 @@ import courseRoutes from "./routes/courseRoutes.js";
 
 import userRoutes from "./routes/userRoutes.js";
 import cartRoutes from "./routes/cartRoutes.js";
+import path from "path";
 
 const app = express();
 
@@ -93,5 +94,9 @@ app.get("/welcome/:username", (req, res) => {
 app.use((req, res) => {
     res.status(404).send("<h1>404 - Page Not Found</h1>");
 });
+
+app.get("/api/products",(req,res)=>{
+    res.sendFile(path.join(__dirname,"view","products.html"));
+})
 
 export default app;
