@@ -1,12 +1,21 @@
+import { getAllProducts as getAllProductsService,
+    getProductById as getProductByIdService,
+    addProduct as addProductService
+ } from "../services/productService.js";
+
+
 export const getAllproducts=(req,res)=>{
-    res.send("Fetching all products");
+    const message=getAllProductsService();
+    res.send(message);
 }
 
 export const getProductById=(req,res)=>{
     const id=req.params.id;
-    res.send(`Fetching product with id:${id}`)
+    const message=getProductByIdService(id);
+    res.send(message);
 }
 
 export const Addproduct=(req,res)=>{
-    res.send(`Adding new product`);
+    const message=addProductService();
+    res.send(message);
 }

@@ -9,9 +9,9 @@ import {
 
 
 
-router.get("/products",getAllproducts);
+router.get("/",getAllproducts);
 
-router.post("/products",Addproduct)
+router.post("/",Addproduct)
 
 router.get("/:id",getProductById);
 
