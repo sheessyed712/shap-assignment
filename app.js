@@ -7,8 +7,15 @@ import bookRoutes from "./routes/bookRoutes.js";
 import studentRoutes from "./routes/studentRoutes.js";
 import courseRoutes from "./routes/courseRoutes.js";
 
-const app = express();
+import userRoutes from "./routes/userRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
+import cartRoutes from "./routes/cartRoutes.js";
 
+const app = express();
+//ecommerce startup
+app.use("/users",userRoutes);
+app.use("/products",productRoutes);
+app.use("/cart",cartRoutes);
 //home route
 app.get("/",(req,res)=>{
     res.send("Welcome to the student and course protal.")
