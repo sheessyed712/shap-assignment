@@ -4,7 +4,20 @@ import customMiddleware from "./middlewares/customMiddlewares.js";
 import productRoutes from "./routes/productRoutes.js";
 import bookRoutes from "./routes/bookRoutes.js";
 
+import studentRoutes from "./routes/studentRoutes.js";
+import courseRoutes from "./routes/courseRoutes.js";
+
 const app = express();
+
+//home route
+app.get("/",(req,res)=>{
+    res.send("Welcome to the student and course protal.")
+})
+//connecting the student route
+app.use("/students",studentRoutes);
+//connect course route
+app.use("/courses",courseRoutes);
+
 
 //middleware for logging
 app.use((req,res,next)=>{
