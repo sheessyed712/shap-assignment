@@ -1,19 +1,17 @@
 import express from "express";
 const router=express.Router();
+import {
+    getAllproducts,
+    getProductById,
+    Addproduct
+
+} from "../controllers/productConroleer.js";
 
 
 
-router.get("/products",(req,res)=>{
-    res.send("A list of all the products");
-})
+router.get("/products",getAllproducts);
 
-router.post("/products",(req,res)=>{
-    res.send("A new product has been created");
-})
+router.post("/products",Addproduct)
 
-router.get("/:id",(req,res)=>{
-    const id =req.params.id;
-    res.send(`fetching product with id :${id}`);
-    
-})
+router.get("/:id",getProductById);
 export default router;
