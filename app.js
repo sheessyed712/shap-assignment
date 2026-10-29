@@ -99,4 +99,8 @@ app.get("/api/products",(req,res)=>{
     res.sendFile(path.join(__dirname,"view","products.html"));
 })
 
+//assignment
+app.get("/api/product",(req,res)=>{
+    res.sendFile(path.join(__dirname,"view","product_form.html"));
+})
 export default app;
