@@ -11,6 +11,11 @@ import userRoutes from "./routes/userRoutes.js";
 import cartRoutes from "./routes/cartRoutes.js";
 import path from "path";
 
+import errorMiddleware from "./middlewares/errorMiddleware.js";
+import { errorMonitor } from "events";
+
+
+
 const app = express();
 
 // Parse JSON request bodies
@@ -41,6 +46,8 @@ app.use("/courses", courseRoutes);
 // Book routes
 app.use("/", bookRoutes);
 
+
+app.use(errorMiddleware)
 // Ecommerce assignment: categories
 app.get("/categories", (req, res) => {
     res.send("Here is the list of all products.");
