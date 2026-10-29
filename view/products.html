@@ -6,6 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>fetching all the products.</h1>
+    <form id="productForm" onsubmit="formHandle">
+        <label for="product">Product Name</label>
+        <input type="text" id="product" name="productName" />
+        <button type="submit">Add product</button>
+
+
+    </form>
+    <h2>Server Response</h2>
+    <pre id="response"></pre>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/products.js"></script>
 </body>
 </html>

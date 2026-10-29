@@ -90,6 +90,21 @@ app.get("/welcome/:username", (req, res) => {
     res.send(`<h1>Welcome ${username}, your role is ${role}</h1>`);
 });
 
+//post request
+app.use(express.json());
+
+app.post("/api/products",(req,res)=>{
+    
+    const products=req.body;
+
+    console.log(products);
+    res.status(201).json({
+        message:"product added successfully",
+        product:products
+    })
+
+})
+
 // 404 handler MUST be last
 app.use((req, res) => {
     res.status(404).send("<h1>404 - Page Not Found</h1>");
